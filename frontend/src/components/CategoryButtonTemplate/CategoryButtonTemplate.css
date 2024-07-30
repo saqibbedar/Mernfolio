@@ -22,7 +22,7 @@
     transition: var(--transition);
 }
 .active-category{
-    background: var(--link-color) !important;
+    background: var(--featured-bg) !important;
     color: var(--white) !important;
     transition: .1s ease;
 }

@@ -45,7 +45,7 @@ const FeaturedProjects = () => {
         <HeroBtn
           btnValue={"View all projects"}
           btnLink={'/Projects'}
-          btnBg={"#202124"}
+          btnBg={"var(--featured-bg)"}
           hoverColor={"#323336"}
         />
       </div>

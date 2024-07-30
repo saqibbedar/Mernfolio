@@ -1,6 +1,6 @@
 import "./BlogPage_Layout.css";
 import { featuredBlogPostsData } from "../../assets/assets";
-import Categories from "../Categories/Categories";
+import CategoryButtonTemplate from "../CategoryButtonTemplate/CategoryButtonTemplate";
 import { useContext } from "react";
 import { CategoryContext } from "../../Context/CategoryContext";
 import {Link} from "react-router-dom"
@@ -33,7 +33,7 @@ const BlogPage_Layout = () => {
           sunt.
         </div>
       </div>
-      <Categories Buttons={CategoryButtons} isCenter={true} />
+      <CategoryButtonTemplate Buttons={CategoryButtons} isCenter={true} />
       <br />
       <div className="section-info">
         <h1>

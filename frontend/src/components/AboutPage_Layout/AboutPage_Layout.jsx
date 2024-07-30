@@ -3,7 +3,7 @@ import { about_data_1, educational_data  } from "../../assets/assets"
 import { CategoryContext } from "../../Context/CategoryContext"
 import AboutLandingPage from "./AboutLandingPage/AboutLandingPage"
 import "./AboutPage_Layout.css"
-import Categories from "../Categories/Categories"
+import CategoryButtonTemplate from "../CategoryButtonTemplate/CategoryButtonTemplate"
 import AboutEducationSection from "./AboutEducationSection/AboutEducationSection"
 import AboutSkillSection from "./AboutSkillSection/AboutSkillPage"
 import AboutProjectSection from "./AboutProjectsSection/AboutProjectSection"
@@ -17,7 +17,7 @@ const AboutPage_Layout = () => {
   return (
     <div className="about-section-main-wrapper">
      <AboutLandingPage title={about_data_1.title} description={about_data_1.description} img={about_data_1.authorImg}/>
-     <Categories Buttons={CategoryButtons}/>
+     <CategoryButtonTemplate Buttons={CategoryButtons}/>
      <div>
         {category === CategoryButtons[0] && <AboutEducationSection educational_data={educational_data} />}
         {category === CategoryButtons[1] && <AboutSkillSection/> }

@@ -1,8 +1,8 @@
 import { useContext} from 'react';
-import './Categories.css'
+import './CategoryButtonTemplate.css'
 import { CategoryContext } from '../../Context/CategoryContext';
 
-const Categories = ({Buttons, isCenter}) => { 
+const CategoryButtonTemplate = ({Buttons, isCenter}) => { 
 
   const {category, setCategory} = useContext(CategoryContext);
 
@@ -14,7 +14,6 @@ const Categories = ({Buttons, isCenter}) => {
                 key={index} 
                 onClick={()=>{
                   setCategory(button)
-
                 }} 
                 className= {category === button ? "category-btn active-category" : "category-btn"} 
                 >
@@ -26,4 +25,4 @@ const Categories = ({Buttons, isCenter}) => {
   )
 }
 
-export default Categories
+export default CategoryButtonTemplate
