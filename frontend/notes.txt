@@ -1,0 +1,31 @@
+// const handleScroll = ()=>{
+  //   console.log("Total Height: ", window.innerHeight)
+  //   console.log("Total Height from top: ",document.documentElement.scrollTop );
+  // }
+  // window.addEventListener("scroll", handleScroll);
+
+  // useEffect(()=>{
+  //   const handleScroll = ()=>{
+  //     console.log("Total Height: ", window.innerHeight)
+  //     console.log("Total Height: ",document.documentElement.scrollTop );
+  //   }
+  //   window.addEventListener("scroll", handleScroll);
+  //   return ()=>{
+  //     window.removeEventListener("scroll", handleScroll);
+  //   }
+  // })
+
+  // useEffect(() => {
+  //   console.log("Testimonials component has mounted.");
+  //   console.log(document.title);
+
+  //   // Clean up function (optional, used when you need to clean up something when the component unmounts)
+  //   return () => {
+  //     console.log("Testimonials component will unmount.");
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log('Effect runs after every render');
+  // });
+  

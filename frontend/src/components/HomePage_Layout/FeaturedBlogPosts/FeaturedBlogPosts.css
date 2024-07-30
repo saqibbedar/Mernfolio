@@ -1,0 +1,37 @@
+.f-post-wrapper{
+    background: var(--featured-bg);
+    position: absolute;
+    left: 0;
+    width: 100%;
+    max-height: 100%;
+    height: fit-content;
+    padding: 50px 30px 50px 80px;
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+    overflow-x: scroll;
+    animation: var(--fadeIn);
+}
+.f-post-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.f-post-btn .f-post-view-more-btn{
+    color: white;
+    background: var(--link-color);
+    padding: 20px 21px;
+    font-size: 13px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+.f-post-view-more-btn:hover{
+    background: var(--link-hover);
+}
+@media (width <767px) {
+    .f-post-wrapper{
+    padding: 50px 20px 40px 26px;
+    margin-top: 50px;
+}
+}
