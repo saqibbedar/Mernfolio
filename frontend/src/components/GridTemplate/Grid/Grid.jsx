@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const Grid = ({ isGrid, gridTempCol }) => {
   const [gridTemplateColumns, setGridTemplateColumns] = useState(() =>
-    window.innerWidth <= 767 ? "1fr" : gridTempCol
+    window.innerWidth <= 767 ? "1fr 1fr" : gridTempCol
   );
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const Grid = ({ isGrid, gridTempCol }) => {
       } else {
         setGridTemplateColumns(gridTempCol);
       }
-    };
+    }; 
 
     window.addEventListener("resize", handleResize);
 

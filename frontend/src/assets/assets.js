@@ -202,22 +202,12 @@ import fCC from "./Images/freeCodeCampCertificate.webp"
 import programming_hub_logo from "./Images/programming_hub_logo.webp"
 
 export const blogPostCategories = [
-    {
-        education : "Education"
-    },
-    {
-        technology : "Technology"
-    },
-    {
-        coding : "Coding"
-    },
-    {
-        courses : "Courses"
-    },
-    {
-        projects : "Projects"
-    },
-
+    "Education",
+    "Technology",
+    "Coding",
+    "Programming",
+    "Courses",
+    "Projects"
 ]
 
 export const featuredBlogPostsData = [
@@ -225,7 +215,14 @@ export const featuredBlogPostsData = [
         link : "/",
         description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nostrum rerum et. Cupiditate eligendi, explicabo animi laboriosam dolorum deleniti itaque ipsam enim corporis ex harum voluptatum, eum alias ducimus dolorem.",
         img : "https://th.bing.com/th/id/R.50e2dcfd03313a5fc9d76c38aef985ec?rik=QqZRh%2bgCI%2buZSg&pid=ImgRaw&r=0",
-        title : "Hello, world",
+        title : "Education",
+        category: "Education"
+    },
+    {
+        link : "/",
+        description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nostrum rerum et. Cupiditate eligendi, explicabo animi laboriosam dolorum deleniti itaque ipsam enim corporis ex harum voluptatum, eum alias ducimus dolorem.",
+        img : "https://th.bing.com/th/id/R.50e2dcfd03313a5fc9d76c38aef985ec?rik=QqZRh%2bgCI%2buZSg&pid=ImgRaw&r=0",
+        title : "Education",
         category: "Education"
     },
     {
@@ -240,7 +237,7 @@ export const featuredBlogPostsData = [
         description : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nostrum rerum et. Cupiditate eligendi, explicabo animi laboriosam dolorum deleniti itaque ipsam enim corporis ex harum voluptatum, eum alias ducimus dolorem.",
         img : "https://th.bing.com/th/id/R.50e2dcfd03313a5fc9d76c38aef985ec?rik=QqZRh%2bgCI%2buZSg&pid=ImgRaw&r=0",
         title : "Hello, world",
-        category: "Coding"
+        category: "Programming"
     },
     {
         link : "/",
