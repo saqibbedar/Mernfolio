@@ -4,6 +4,7 @@ import CategoryButtonTemplate from "../CategoryButtonTemplate/CategoryButtonTemp
 import { useContext } from "react";
 import { CategoryContext } from "../../Context/CategoryContext";
 import {Link} from "react-router-dom"
+import Layout_Info_Template from "../Layout_Info_Template/Layout_Info_Template";
 
 const CategoryButtons = [
   "All",
@@ -22,17 +23,10 @@ const BlogPage_Layout = () => {
 
   return (
     <div className="blog-page-layout-wrapper">
-      <div className="blog-page-layout-info">
-        <div className="blog-page-layout-heading">
-          Explore your favorite blogs
-        </div>
-        <div className="blog-page-layout-description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-          rem rerum blanditiis a officiis incidunt natus illum, velit, porro
-          molestias nulla alias. Amet consequuntur at atque, et odit officiis
-          sunt.
-        </div>
-      </div>
+      <Layout_Info_Template 
+      layoutHeading={"Explore your favorite Blogs"}
+      layoutDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem rerum blanditiis a officiis incidunt natus illum, velit, porro molestias nulla alias. Amet consequuntur at atque, et odit officiis sunt."}
+      />
       <CategoryButtonTemplate Buttons={CategoryButtons} isCenter={true} />
       <br />
       <div className="section-info">

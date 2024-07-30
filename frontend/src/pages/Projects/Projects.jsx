@@ -1,10 +1,12 @@
+import ProjectPageLayout from '../../components/ProjectPage_Layout/ProjectPageLayout'
+import CategoryProvider from "../../Context/CategoryContext"
 import './Projects.css'
 
 const Projects = () => {
   return (
-    <div>
-      Welcome to my projects
-    </div>
+    <CategoryProvider initialCategory={"All"}>
+      <ProjectPageLayout/>
+    </CategoryProvider>
   )
 }
 

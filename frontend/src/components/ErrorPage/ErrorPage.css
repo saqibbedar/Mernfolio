@@ -6,7 +6,7 @@
     align-items: center;
     gap: 25px;
     height: 100dvh;
-    animation: fade .3s ease;
+    animation: var(--transform);
 }
 .error-page-img-container{
     width: 600px;

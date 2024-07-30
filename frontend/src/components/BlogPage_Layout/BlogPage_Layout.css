@@ -1,30 +1,12 @@
 .blog-page-layout-wrapper{
     margin-top: 2rem;
-}
-.blog-page-layout-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-.blog-page-layout-info .blog-page-layout-heading{
-    color: white;
-    background: var(--featured-bg);
-    padding: 10px 15px;
-    border-radius: 50px;
-}
-.blog-page-layout-info .blog-page-layout-description{
-    text-align: center;
-    font-size: 14px;
-    color: #6e6e73;
+    animation: var(--transform);
 }
 .blog-container{
     display: flex;
     align-items: center;
     gap: 1.5rem;
     margin-bottom: 2.5rem;
-    animation: var(--fadeIn);
 }
 :where(.blog-container) .blog-container-img{
     width: min(auto, 300px);
