@@ -11,7 +11,7 @@ import GridItem from '../GridTemplate/GridItem/GridItem';
 import GridToggler from '../GridTemplate/GridToggler/GridToggler'
 import { GridContext } from '../../Context/GridContext';
 
-const CategoryButtons = ["All", "FRONTEND", "HTML", "CSS",  "TAILWIND", "BOOTSTRAP", "JAVASCRIPT", "REACT", "NEXTJS", "BACKEND", "MERN", "C++", "PYTHON", "NODEJS", "EXPRESS", "MONGODB",];
+const CategoryButtons = ["All", "Frontend", "HTML", "CSS",  "Tailwind", "Bootstrap", "JavaScript", "React", "NextJS", "Backend", "MERN", "C++", "Python", "NodeJS", "Express", "MongoDB",];
 
 const ProjectPageLayout = () => {
   
@@ -33,7 +33,7 @@ const ProjectPageLayout = () => {
       return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
     }
 
-    const sectionTitle = category === "All" ? "All" : `Category: "${category}"`;
+    const sectionTitle = category === "All" ? "All" : `Category: ${category} (${filteredProjects.length})`;
 
   return (
     <div className='project-page-layout-wrapper'>
