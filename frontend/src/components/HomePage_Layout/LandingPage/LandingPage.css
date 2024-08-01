@@ -13,7 +13,6 @@
   object-position: center;
   object-fit: cover;
   position: relative;
-  animation: var(--fadeIn);
 }
 .content {
   position: absolute;

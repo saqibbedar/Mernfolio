@@ -106,14 +106,14 @@ export const futureProjectsData = [
     {
         project_link : "/",
         project_name: "Insta clone",
-        project_img : "Welcome to my Portfolio",
-        img : "https://th.bing.com/th/id/R.50e2dcfd03313a5fc9d76c38aef985ec?rik=QqZRh%2bgCI%2buZSg&pid=ImgRaw&r=0"
+        project_img : "https://th.bing.com/th/id/R.50e2dcfd03313a5fc9d76c38aef985ec?rik=QqZRh%2bgCI%2buZSg&pid=ImgRaw&r=0",
+        category: "Nextjs MERN TAILWIND Nodejs Frontend Backend HTML JavaScript React Express MongoDB"
     },
     {
         project_link : "/",
-        project_name: "Insta clone",
-        project_img : "Welcome to my Portfolio",
-        img : "https://www.sotatek.com/wp-content/uploads/2022/12/game-development-services-4.png"
+        project_name: "MERN Portfolio",
+        project_img : "https://www.sotatek.com/wp-content/uploads/2022/12/game-development-services-4.png",
+        category: "MERN Nodejs Frontend Backend HTML JavaScript React Express MongoDB"
     },
 ]
 
