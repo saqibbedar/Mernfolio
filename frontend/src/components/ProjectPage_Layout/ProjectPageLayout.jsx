@@ -3,13 +3,19 @@ import { useContext } from 'react'
 import { CategoryContext } from '../../Context/CategoryContext'
 import Layout_Info_Template from '../Layout_Info_Template/Layout_Info_Template';
 import CategoryButtonTemplate from '../CategoryButtonTemplate/CategoryButtonTemplate';
-import { futureProjectsData, ErrorImages } from '../../assets/assets';
-import {Link} from "react-router-dom";
-import ErrorPage from '../ErrorPage/ErrorPage';
+import { futureProjectsData} from '../../assets/assets';
+import { ErrorImages } from '../../assets/assets';
+import ErrorPage from "../ErrorPage/ErrorPage"
+import Grid from '../GridTemplate/Grid/Grid';
+import GridItem from '../GridTemplate/GridItem/GridItem';
+import GridToggler from '../GridTemplate/GridToggler/GridToggler'
+import { GridContext } from '../../Context/GridContext';
 
 const CategoryButtons = ["All", "FRONTEND", "HTML", "CSS",  "TAILWIND", "BOOTSTRAP", "JAVASCRIPT", "REACT", "NEXTJS", "BACKEND", "MERN", "C++", "PYTHON", "NODEJS", "EXPRESS", "MONGODB",];
 
 const ProjectPageLayout = () => {
+  
+    const {isGrid} = useContext(GridContext);
 
     const {category} = useContext(CategoryContext);
 
@@ -22,6 +28,13 @@ const ProjectPageLayout = () => {
       return projectCategoriesArray.includes(selectedCategory);
     })
 
+    const ToTitleCase = (str)=>{
+      if(!str) return str;
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+
+    const sectionTitle = category === "All" ? "All" : `Category: "${category}"`;
+
   return (
     <div className='project-page-layout-wrapper'>
 
@@ -31,24 +44,21 @@ const ProjectPageLayout = () => {
       />
       <CategoryButtonTemplate Buttons={CategoryButtons} isCenter={false}/>
       <br/>
-      <div className="section-info">
-        <h1>{category === "All" ? "All" : `Category: "${category}"`}</h1>
-      </div>
-      <div className={filteredProjects.length > 0 ? "grid": "flex"}>
+
+      <GridToggler section_name={sectionTitle}/>
+
+      <div className={filteredProjects.length > 0 ? "": "no-project-found"}>
         {
           filteredProjects.length > 0 ? 
-          filteredProjects.map((project, index)=>(
-            <Link to={project.project_link} className='grid-item' key={index}>
-              <div className="grid-item-title">• {project.project_name}</div>
-              <div className="grid-item-container">
-                <img src={project.project_img} alt="" />
-              </div>
-            </Link>
-          )) : (
-            <div>
-              <h2>{`No ${category} Project found`}</h2>
-              <div>{`Sorry, we could'nt find any project related to the ${category} category.`}</div>
-            </div>
+          <Grid isGrid={isGrid} gridTempCol={"1fr 1fr 1fr 1fr"}>
+            {
+              filteredProjects.map((project, index)=>(
+                <GridItem key={index} link={project.project_link} title={project.project_name} img={project.project_img}/>
+              )) 
+            }
+          </Grid>
+          : (
+            <ErrorPage containerHeight={"100%"} img={ErrorImages.no_result2} imgContainerHeight={"auto"} imgContainerWidth={"auto"} title={`No ${category} Project found`} titleColor={"var(--text-color)"} description={`Sorry, we could'nt find any project related to the ${category} category.`} desColor={"var(--text-color)"} isButton={false}/> 
           )
         }
       </div>

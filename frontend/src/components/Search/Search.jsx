@@ -93,7 +93,7 @@ const Search = (props) => {
                   )
                 ) 
               : 
-                <ErrorPage img={ErrorImages.no_result2} title={"No result found"} description={"We could'nt find what you searched for. Try searching again."} isButton={false}/>
+                <ErrorPage img={ErrorImages.no_result2} imgContainerHeight={"auto"} imgContainerWidth={"auto"} title={"No result found"} description={"We could'nt find what you searched for. Try searching again."} isButton={false}/>
               )
             }
           </div>

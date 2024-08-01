@@ -1,4 +1,4 @@
-import { useContext} from 'react';
+import { useContext, memo} from 'react';
 import './CategoryButtonTemplate.css'
 import { CategoryContext } from '../../Context/CategoryContext';
 
@@ -25,4 +25,4 @@ const CategoryButtonTemplate = ({Buttons, isCenter}) => {
   )
 }
 
-export default CategoryButtonTemplate
+export default memo(CategoryButtonTemplate)

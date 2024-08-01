@@ -4,49 +4,6 @@
   margin-top: 25rem;
   margin-bottom: 2rem;
 }
-.f-project-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 30px;
-  border-bottom: 1px solid;
-  margin-bottom: 2rem;
-  padding: 0 0 0.9rem 0;
-}
-.f-project-info h1 {
-  font-weight: 300;
-  font-size: 35px;
-  color: var(--text-color);
-}
-.f-project-info-navigation-btns {
-  display: flex;
-  gap: 12px;
-}
-.f-project-info-navigation-btns button {
-  display: grid;
-  place-items: center;
-  border-radius: 6px;
-  padding: 8px;
-  border: none;
-  background: var(--featured-btn-bg);
-  cursor: pointer;
-  transition: var(--transition);
-  user-select: none;
-}
-.f-project-info-navigation-btns button:active {
-  scale: 0.8;
-  svg {
-    scale: 0.8;
-  }
-}
-.f-project-info-navigation-btns button svg {
-  fill: var(--white);
-  stroke: white;
-  height: 20px;
-  width: 20px;
-  transition: var(--transition);
-}
 .hero-btn-wrapper {
   width: 100%;
   display: flex;

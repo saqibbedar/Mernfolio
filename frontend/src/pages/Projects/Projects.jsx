@@ -1,13 +1,16 @@
-import ProjectPageLayout from '../../components/ProjectPage_Layout/ProjectPageLayout'
-import CategoryProvider from "../../Context/CategoryContext"
-import './Projects.css'
+import ProjectPageLayout from "../../components/ProjectPage_Layout/ProjectPageLayout";
+import CategoryProvider from "../../Context/CategoryContext";
+import GridProvider from "../../Context/GridContext";
+import "./Projects.css";
 
 const Projects = () => {
   return (
     <CategoryProvider initialCategory={"All"}>
-      <ProjectPageLayout/>
+      <GridProvider>
+        <ProjectPageLayout />
+      </GridProvider>
     </CategoryProvider>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
