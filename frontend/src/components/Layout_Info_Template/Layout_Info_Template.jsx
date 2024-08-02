@@ -1,12 +1,12 @@
 import './Layout_Info_Template.css'
 
-const Layout_Info_Template = ({layoutHeading, layoutDescription}) => {
+const Layout_Info_Template = ({layoutHeading, layoutDescription, isLoading}) => {
   return (
     <div className="layout-info">
-        <div className="layout-heading">
+        <div className={isLoading ? "layout-heading skeleton" : "layout-heading"}>
           {layoutHeading}
         </div>
-        <div className="layout-description">
+        <div className={isLoading ? "layout-description skeleton": "layout-description"}>
           {layoutDescription}
         </div>
       </div>

@@ -197,21 +197,19 @@
     width: 0px;
     height: 0px;
 }
-  
-  /* Track */
+/*   
 .mobile-nav-menu::-webkit-scrollbar-track {
     background: transparent; 
 }
    
-  /* Handle */
 .mobile-nav-menu::-webkit-scrollbar-thumb {
     background: transparent; 
 }
   
-  /* Handle on hover */
 .mobile-nav-menu::-webkit-scrollbar-thumb:hover {
     background: transparent; 
-}
+} 
+*/
 .mobile-nav-menu a{
     color: var(--text-color-2);
     font-weight: 600;

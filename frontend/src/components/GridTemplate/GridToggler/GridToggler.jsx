@@ -3,7 +3,7 @@ import React, { useEffect, useContext} from "react";
 import { icons } from "../../../assets/assets";
 import { GridContext } from "../../../Context/GridContext";
 
-const GridToggler = ({ section_name }) => {
+const GridToggler = ({ section_name, isLoading }) => {
   const { isGrid, setIsGrid } = useContext(GridContext);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const GridToggler = ({ section_name }) => {
   }, [setIsGrid]);
 
   return (
-    <div className="grid-toggler">
+    <div className={isLoading ? "grid-toggler skeleton": "grid-toggler"}>
       <h1>{section_name}</h1>
       <div className="grid-toggler-btn">
         <button

@@ -2,15 +2,17 @@ import "./AboutLandingPage.css";
 import HeroBtn from "../../Reusable Components/HeroBtn/HeroBtn";
 import { useEffect, useState } from "react";
 
-const AboutLandingPage = ({ title, description, cv_url, img }) => {
+const AboutLandingPage = ({ title, description, cv_url, img, setIsLoading }) => {
 
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(()=>{
+    setLoading(true)
     setIsLoading(true);
   }, [title, description, cv_url, img]);
 
   const handleImageLoad = ()=>{
+    setLoading(false)
     setIsLoading(false);
   }
 

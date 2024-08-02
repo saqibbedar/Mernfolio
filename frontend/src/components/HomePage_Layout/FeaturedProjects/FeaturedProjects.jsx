@@ -1,5 +1,5 @@
 import "./FeaturedProjects.css";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GridContext } from "../../../Context/GridContext";
 import { futureProjectsData } from "../../../assets/assets";
 import HeroBtn from "../../Reusable Components/HeroBtn/HeroBtn";
@@ -11,6 +11,8 @@ const FeaturedProjects = () => {
   
   const {isGrid} = useContext(GridContext);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   const filteredProjects = futureProjectsData.filter(project => {
     const projectCategoriesArray = project.category.toLowerCase().split(" ");
     return projectCategoriesArray.includes("featured")
@@ -19,11 +21,11 @@ const FeaturedProjects = () => {
   return (
     <div className="f-projects-wrapper">
 
-      <GridToggler section_name={"Featured projects"}/>
+      <GridToggler section_name={"Featured projects"} isLoading={isLoading}/>
       <Grid isGrid={isGrid} gridTempCol={"1fr 1fr"}>
         {
           filteredProjects.slice(0, 2).map((project, index)=>(
-            <GridItem key={index} link={project.project_link} title={project.project_name} img={project.project_img}/>
+            <GridItem key={index} link={project.project_link} title={project.project_name} img={project.project_img} isLoading={isLoading} setIsLoading={setIsLoading}/>
           ))
         }
       </Grid>
@@ -34,6 +36,7 @@ const FeaturedProjects = () => {
           btnLink={'/Projects'}
           btnBg={"var(--featured-bg)"}
           hoverColor={"#323336"}
+          isLoading={isLoading}
         />
       </div>
     </div>

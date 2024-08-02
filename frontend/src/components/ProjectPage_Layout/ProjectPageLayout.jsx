@@ -1,5 +1,5 @@
 import './ProjectPageLayout.css'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { CategoryContext } from '../../Context/CategoryContext'
 import Layout_Info_Template from '../Layout_Info_Template/Layout_Info_Template';
 import CategoryButtonTemplate from '../CategoryButtonTemplate/CategoryButtonTemplate';
@@ -14,6 +14,8 @@ import { GridContext } from '../../Context/GridContext';
 const CategoryButtons = ["All", "Frontend", "HTML", "CSS",  "Tailwind", "Bootstrap", "JavaScript", "React", "NextJS", "Backend", "MERN", "C++", "Python", "NodeJS", "Express", "MongoDB",];
 
 const ProjectPageLayout = () => {
+
+    const [isLoading, setIsLoading] = useState(true);
   
     const {isGrid} = useContext(GridContext);
 
@@ -22,7 +24,7 @@ const ProjectPageLayout = () => {
     const selectedCategory = category.toLowerCase();
 
     const filteredProjects = futureProjectsData.filter((project) => {
-      if(category === "All") return true;
+      if(selectedCategory === "all") return true;
 
       const projectCategoriesArray = project.category.toLowerCase().split(" ");
       return projectCategoriesArray.includes(selectedCategory);
@@ -42,10 +44,10 @@ const ProjectPageLayout = () => {
       layoutHeading={"Explore your favorite Projects"}
       layoutDescription={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rem rerum blanditiis a officiis incidunt natus illum, velit, porro molestias nulla alias. Amet consequuntur at atque, et odit officiis sunt."}
       />
-      <CategoryButtonTemplate Buttons={CategoryButtons} isCenter={false}/>
+      <CategoryButtonTemplate Buttons={CategoryButtons} isCenter={false} isLoading={isLoading}/>
       <br/>
 
-      <GridToggler section_name={sectionTitle}/>
+      <GridToggler section_name={sectionTitle} isLoading={isLoading}/>
 
       <div className={filteredProjects.length > 0 ? "": "no-project-found"}>
         {
@@ -53,12 +55,12 @@ const ProjectPageLayout = () => {
           <Grid isGrid={isGrid} gridTempCol={"1fr 1fr 1fr 1fr"}>
             {
               filteredProjects.map((project, index)=>(
-                <GridItem key={index} link={project.project_link} title={project.project_name} img={project.project_img}/>
+                <GridItem key={index} link={project.project_link} title={project.project_name} img={project.project_img} isLoading={isLoading} setIsLoading={setIsLoading}/>
               )) 
             }
           </Grid>
           : (
-            <ErrorPage containerHeight={"100%"} img={ErrorImages.no_result2} imgContainerHeight={"auto"} imgContainerWidth={"auto"} title={`No ${category} Project found`} titleColor={"var(--text-color)"} description={`Sorry, we could'nt find any project related to the ${category} category.`} desColor={"var(--text-color)"} isButton={false}/> 
+            <ErrorPage containerHeight={"100%"} img={ErrorImages.no_result2} imgContainerHeight={"auto"} imgContainerWidth={"auto"} title={`No ${category} Project found`} titleColor={"var(--text-color)"} description={`Sorry, we could'nt find any project related to the ${category} category.`} desColor={"var(--text-color)"} isButton={false} /> 
           )
         }
       </div>

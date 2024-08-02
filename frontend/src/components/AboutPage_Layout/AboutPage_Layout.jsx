@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { about_data_1, educational_data  } from "../../assets/assets"
 import { CategoryContext } from "../../Context/CategoryContext"
 import AboutLandingPage from "./AboutLandingPage/AboutLandingPage"
@@ -12,14 +12,19 @@ const CategoryButtons = ["Education", "Skills", "Projects"];
 
 const AboutPage_Layout = () => {
 
-  const {category} = useContext(CategoryContext)
+  const {category} = useContext(CategoryContext);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
 
   return (
     <div className="about-section-main-wrapper">
-     <AboutLandingPage title={about_data_1.title} description={about_data_1.description} img={about_data_1.authorImg}/>
-     <CategoryButtonTemplate Buttons={CategoryButtons}/>
+     <AboutLandingPage title={about_data_1.title} description={about_data_1.description} img={about_data_1.authorImg} setIsLoading={setIsLoading}/>
+     <CategoryButtonTemplate Buttons={CategoryButtons} isLoading={isLoading}/>
      <div>
-        {category === CategoryButtons[0] && <AboutEducationSection educational_data={educational_data} />}
+        {category === CategoryButtons[0] && <AboutEducationSection educational_data={educational_data} isLoading={isLoading}/>}
         {category === CategoryButtons[1] && <AboutSkillSection/> }
         {category === CategoryButtons[2] && <AboutProjectSection/>}
       </div>

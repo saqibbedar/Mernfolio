@@ -5,8 +5,8 @@ import Search from "../Search/Search";
 import { Link, useLocation } from "react-router-dom";
 
 
-const des_nav = ["Home", "About", "Blog", "Services", "Courses", "Projects", "Contact"];
-const mob_nav = ["Home", "About", "Blog", "Services", "Courses", "Projects", "Contact"];
+const des_nav = ["Home", "About", "Blog", "Projects", "Services", "Courses", "Contact"];
+const mob_nav = ["Home", "About", "Blog", "Projects", "Services", "Courses", "Contact"];
 
 const Navbar = () => {
   const location = useLocation()
