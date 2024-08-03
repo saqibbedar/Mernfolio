@@ -4,12 +4,14 @@ import GridToggler from "../../GridTemplate/GridToggler/GridToggler";
 import { GridContext } from "../../../Context/GridContext";
 import { useContext, useState } from "react";
 import GridItem from "../../GridTemplate/GridItem/GridItem";
-import { futureProjectsData } from "../../../assets/assets";
 import HeroBtn from "../../Reusable Components/HeroBtn/HeroBtn";
+import { ProjectContext } from "../../../Context/ProjectContext";
 
 const AboutProjectSection = () => {
   const { isGrid } = useContext(GridContext);
-  
+
+  const {projects} = useContext(ProjectContext);
+
   const [isLoading, setIsLoading] = useState(true);
 
   return (
@@ -17,7 +19,7 @@ const AboutProjectSection = () => {
         <GridToggler section_name={"Top Projects"} />
         <Grid isGrid={isGrid} gridTempCol={"1fr 1fr 1fr"}>
           {
-            futureProjectsData.map((project, index)=>(
+            projects.featuredProjects.map((project, index)=>(
              <GridItem key={index} link={project.project_link} title={project.project_name} img={project.project_img} isLoading={isLoading} setIsLoading={setIsLoading}/>
             ))
           }
