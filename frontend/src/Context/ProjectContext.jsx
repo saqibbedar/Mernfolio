@@ -29,11 +29,27 @@ const ProjectProvider = ({children}) => {
         return projectCategoriesArray.includes("premium")
     })
 
+    // All Projects : this function will receive a category from projects pages and based on that filter the projects and return them.
+
+    const All_Projects = (category)=>{
+
+      const selectedCategory = category.toLowerCase();
+
+      return projectsData.filter(project =>{
+        if(selectedCategory === "all") return true;
+
+        const projectCategoriesArray = project.category.toLowerCase().split(" ");
+
+        return projectCategoriesArray.includes(selectedCategory);
+      })
+    }
+
     const projects = {
         projectsData,
         featuredProjects,
         freeProjects,
-        premiumProjects
+        premiumProjects,
+        All_Projects,
     }
 
   return (

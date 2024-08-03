@@ -3,13 +3,13 @@ import { useContext, useState } from 'react'
 import { CategoryContext } from '../../Context/CategoryContext'
 import Layout_Info_Template from '../Layout_Info_Template/Layout_Info_Template';
 import CategoryButtonTemplate from '../CategoryButtonTemplate/CategoryButtonTemplate';
-import { futureProjectsData} from '../../assets/assets';
 import { ErrorImages } from '../../assets/assets';
 import ErrorPage from "../ErrorPage/ErrorPage"
 import Grid from '../GridTemplate/Grid/Grid';
 import GridItem from '../GridTemplate/GridItem/GridItem';
 import GridToggler from '../GridTemplate/GridToggler/GridToggler'
 import { GridContext } from '../../Context/GridContext';
+import { ProjectContext } from '../../Context/ProjectContext';
 
 const CategoryButtons = ["All", "Frontend", "HTML", "CSS",  "Tailwind", "Bootstrap", "JavaScript", "React", "NextJS", "Backend", "MERN", "C++", "Python", "NodeJS", "Express", "MongoDB",];
 
@@ -21,21 +21,11 @@ const ProjectPageLayout = () => {
 
     const {category} = useContext(CategoryContext);
 
-    const selectedCategory = category.toLowerCase();
+    const {projects} = useContext(ProjectContext);
 
-    const filteredProjects = futureProjectsData.filter((project) => {
-      if(selectedCategory === "all") return true;
+    const All_Projects = projects.All_Projects(category);
 
-      const projectCategoriesArray = project.category.toLowerCase().split(" ");
-      return projectCategoriesArray.includes(selectedCategory);
-    })
-
-    const ToTitleCase = (str)=>{
-      if(!str) return str;
-      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-    }
-
-    const sectionTitle = category === "All" ? "All" : `Category: ${category} (${filteredProjects.length})`;
+    const sectionTitle = category === "All" ? "All" : `Category: ${category}`;
 
   return (
     <div className='project-page-layout-wrapper'>
@@ -47,14 +37,14 @@ const ProjectPageLayout = () => {
       <CategoryButtonTemplate Buttons={CategoryButtons} isCenter={false} isLoading={isLoading}/>
       <br/>
 
-      <GridToggler section_name={sectionTitle} isLoading={isLoading}/>
+      <GridToggler section_name={<>{sectionTitle} {<span>{All_Projects.length}</span>}</>} isLoading={isLoading}/>
 
-      <div className={filteredProjects.length > 0 ? "": "no-project-found"}>
+      <div className={All_Projects.length > 0 ? "": "no-project-found"}>
         {
-          filteredProjects.length > 0 ? 
+          All_Projects.length > 0 ? 
           <Grid isGrid={isGrid} gridTempCol={"1fr 1fr 1fr 1fr"}>
             {
-              filteredProjects.map((project, index)=>(
+              All_Projects.map((project, index)=>(
                 <GridItem key={index} link={project.project_link} title={project.project_name} img={project.project_img} isLoading={isLoading} setIsLoading={setIsLoading}/>
               )) 
             }
