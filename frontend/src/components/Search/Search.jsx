@@ -2,7 +2,6 @@ import { useRef, useState, useEffect } from "react";
 import "./Search.css";
 import { FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
-// import axios from "axios";
 import JsonData from "../../assets/Search_Data.json";
 import { ErrorImages, icons} from "../../assets/assets"
 import ErrorPage from "../ErrorPage/ErrorPage";
