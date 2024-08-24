@@ -3,8 +3,8 @@ import contactModel from "../models/contactModel.js";
 // Send Email
 
 const sendEmail = async (req, res) => {
-    console.log(req.body);
-    
+  console.log(req.body);
+
   const mail = new contactModel({
     name: req.body.name,
     email: req.body.email,
@@ -20,4 +20,33 @@ const sendEmail = async (req, res) => {
   }
 };
 
-export { sendEmail };
+// email list
+
+const getEmails = async (req, res) => {
+  try {
+    const emails = await contactModel.find({});
+    res.json({ success: true, emails });
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false, message: "Error while retrieving emails." });
+  }
+};
+
+// Remove Email
+
+const removeEmail = async (req, res) => {
+  try {
+    const result = await contactModel.findOneAndDelete({ _id: req.params.id });
+
+    if (result) {
+      res.json({ success: true, message: "Email deleted." });
+    } else {
+      res.json({ success: false, message: "Email not found." });
+    }
+  } catch (e) {
+    console.log(e);
+    res.json({ success: false, message: "Error while deleting email." });
+  }
+};
+
+export { sendEmail, getEmails, removeEmail };
