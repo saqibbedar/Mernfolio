@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { ConnectToDatabase } from "./config/db.js";
+import contactRouter from "./routes/contactRoute.js";
 
 // app config
 const app = express();
@@ -18,6 +19,9 @@ const PORT = process.env.PORT || 5000;
 
 // Database connection
 ConnectToDatabase(`${process.env.MONGODB_URL}/Mernfolio`);
+
+// api endpoints
+app.use("/api", contactRouter);
 
 app.get("/", (req, res)=>{
     res.send("Server is working...");
