@@ -70,6 +70,7 @@ body{
 .skeleton{
   position: relative;
   border-radius: 4px;
+  overflow: hidden;
 }
 .skeleton::before{
   content: '';
@@ -180,9 +181,22 @@ body{
 
 
 /* Hide scrollbar for all overflow content */
-:where(.f-post-wrapper, .testimonials-wrapper, .posts, .categories-box)::-webkit-scrollbar {
+:where(.f-blog-content, .testimonials-wrapper, .posts, .categories-box)::-webkit-scrollbar {
   width: 0px;
   height: 0px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.rows-handler{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 :where(.card-content p, .content p, .f-post-left-section p, .categories, .founded-items, .results, .founded-item-box-content-description ){

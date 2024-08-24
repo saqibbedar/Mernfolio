@@ -58,10 +58,6 @@
 .swiper-pagination-bullet{
   background: var(--white) !important;
 }
-.swiper-button-prev,
-.swiper-button-next {
-  display: none !important;
-}
 .swiper-pagination {
   padding-bottom: .2rem;
 }

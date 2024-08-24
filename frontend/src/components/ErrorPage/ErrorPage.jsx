@@ -26,8 +26,8 @@ const ErrorPage = ({containerHeight, img, imgContainerHeight, imgContainerWidth,
           <img src={img} onLoad={handleImageLoad} />
         </div>
         <div className="error-box">
-          <h1 style={{color: titleColor && titleColor}} className={isLoading ? "skeleton" : ""}>{title}</h1>
-          <p className={isLoading ? "skeleton" : ""} style={title === "Page not found" || title === "Courses are coming soon!"  ? {...error404Styles, fontSize: img ? "" : "17px"}: {fontSize : img ? "" : "17px", color: desColor }}>{description}</p>
+          <h1 style={{color: titleColor && titleColor}} className={img && isLoading ? "skeleton" : ""}>{title}</h1>
+          <p className={img && isLoading ? "skeleton" : ""} style={title === "Page not found" || title === "Courses are coming soon!"  ? {...error404Styles, fontSize: img ? "" : "17px"}: {fontSize : img ? "" : "17px", color: desColor }}>{description}</p>
         </div>
         <div className="error-page-btn" style={{display : isButton ? "" : "none"}}>
           <HeroBtn btnValue={btnValue} btnLink={btnLink} btnBg={btnBg} hoverColor={hoverColor} isLoading={isLoading}/>

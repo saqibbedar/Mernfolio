@@ -1,23 +1,14 @@
 // import DarkModeDetection from './components/DarkModeDetection/DarkModeDetection'
 import "./index.css";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
-import Navbar from "./components/Navbar/Navbar";
-import About from "./pages/About/About";
-import Blog from "./pages/Blog/Blog";
-import Courses from "./pages/Courses/Courses";
-import Home from "./pages/Home/Home";
-import Projects from "./pages/Projects/Projects";
-import Contact from "./pages/Contact/Contact";
-import NotFound from "./pages/NotFound/NotFound";
-import Services from "./pages/Services/Services";
+import {Navbar, Footer} from './components/components.js'
+import {Home, About, Blog, Contact, Courses, NotFound, Projects, Services} from './pages/pages.js'
 import BackToTop from "./components/Reusable Components/BackToTop/BackToTop";
 
 function App() {
   return (
     <>
       <div className="main">
-        {/* <DarkModeDetection/> */}
           <Navbar />
           <BackToTop/>
           <Routes>

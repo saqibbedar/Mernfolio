@@ -7,7 +7,7 @@ const CategoryButtonTemplate = ({Buttons, isCenter, isLoading}) => {
   const {category, setCategory} = useContext(CategoryContext);
 
   return (
-    <div className={isLoading ? 'categories-box skeleton': 'categories-box'} style={{justifyContent: isCenter ? "center" : "start"}}>
+    <div className='categories-box' style={{justifyContent: isCenter ? "center" : "start"}}>
         {
             Buttons.map((button, index)=>(
                 <button  

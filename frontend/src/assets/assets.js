@@ -207,15 +207,6 @@ import js_coursera from "./Images/Coursera.webp"
 import fCC from "./Images/freeCodeCampCertificate.webp"
 import programming_hub_logo from "./Images/programming_hub_logo.webp"
 
-export const blogPostCategories = [
-    "Education",
-    "Technology",
-    "Coding",
-    "Programming",
-    "Courses",
-    "Projects"
-]
-
 export const featuredBlogPostsData = [
     {
         link : "/",

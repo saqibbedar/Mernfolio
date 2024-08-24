@@ -12,6 +12,8 @@ import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import HeroBtn from "../../Reusable Components/HeroBtn/HeroBtn";
 
 const LandingPage = () => {
+ 
+
   return (
     <div className="landing-Page-wrapper">
       <div className="landing-page">
@@ -23,7 +25,7 @@ const LandingPage = () => {
           pagination={{
             clickable: true,
           }}
-          navigation={true}
+          navigation={false}
           modules={[Autoplay, EffectFade, Pagination, Navigation]}
           className="mySwiper"
         >

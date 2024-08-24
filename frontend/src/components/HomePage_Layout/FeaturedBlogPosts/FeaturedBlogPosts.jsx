@@ -1,24 +1,34 @@
 import "./FeaturedBlogPosts.css";
-import { featuredBlogPostsData } from "../../../assets/assets.js";
 import FeaturedBlogPostCard from "../../Reusable Components/FeaturedBlogPostCard/FeaturedBlogPostCard";
 import { Link } from "react-router-dom";
-Link
+import { useContext, useRef } from "react";
+import { BlogContext } from "../../../Context/BlogContext.jsx";
 
 
 const FeaturedBlogPosts = () => {
-  const size = featuredBlogPostsData.length
-  console.log(size); 
+
+  const {blogs} = useContext(BlogContext);
+
+  const featuredBlogs = blogs.featuredBlogs();
+
   return (
     <> 
       <div className="f-post-wrapper">
-        {featuredBlogPostsData.map((item, index) => {
-          if(index === size-1) {
-            return <div className="f-post-btn"><Link to={"/Blog"} className="f-post-view-more-btn">VIEW <br/>MORE</Link></div>
-          } else{
-            return <FeaturedBlogPostCard key={index} link={item.link} description={item.description} img={item.img} title={item.title} />
+
+        <div className="f-blog-sec-info">
+          <h1>Featured Blog Post</h1>
+        </div>
+
+        <div className="f-blog-content">
+          {featuredBlogs.map((item, index) => {
+            if(index === featuredBlogs.length-1) {
+              return <div className="f-post-btn" key={index}><Link to={"/Blog"} className="f-post-view-more-btn">VIEW <br/>MORE</Link></div>
+            } else{
+              return <FeaturedBlogPostCard key={index} link={item.link} description={item.description} img={item.img} title={item.title} />
+            }
           }
-        }
-        )}
+          )}
+        </div>
       </div>
     </>
   );

@@ -1,10 +1,10 @@
 import "./BlogPage_Layout.css";
-import { featuredBlogPostsData } from "../../assets/assets";
 import CategoryButtonTemplate from "../CategoryButtonTemplate/CategoryButtonTemplate";
 import { useContext } from "react";
 import { CategoryContext } from "../../Context/CategoryContext";
 import {Link} from "react-router-dom"
 import Layout_Info_Template from "../Layout_Info_Template/Layout_Info_Template";
+import { BlogContext } from "../../Context/BlogContext";
 
 const CategoryButtons = [
   "All",
@@ -16,10 +16,12 @@ const CategoryButtons = [
 
 const BlogPage_Layout = () => {
   const { category } = useContext(CategoryContext);
+  
+  const {blogs} = useContext(BlogContext);
 
-  const filteredBlogPosts = featuredBlogPostsData.filter(
-    (item) => category === "All" || item.category === category
-  );
+  const All_Blogs = blogs.All_Blogs(category);
+  
+  const sectionTitle = category === "All" ? "All Blogs" : `Category: "${category}"`;
 
   return (
     <div className="blog-page-layout-wrapper">
@@ -31,10 +33,10 @@ const BlogPage_Layout = () => {
       <br />
       <div className="section-info">
         <h1>
-          {category === "All" ? "All Blogs" : `Category: "${category}"`}
+          {sectionTitle}
         </h1>
       </div>
-      {filteredBlogPosts.map((item, index)=>{
+      {All_Blogs.map((item, index)=>{
         return <Link to={item.link} key={index} className="blog-container">
         <div className="blog-container-img">
           <img src={item.img} alt="" />
