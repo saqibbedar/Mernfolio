@@ -24,7 +24,7 @@ const sendEmail = async (req, res) => {
 
 const getEmails = async (req, res) => {
   try {
-    const emails = await contactModel.find({});
+    const emails = await contactModel.find({}).sort({createdAt: -1});
     res.json({ success: true, emails });
   } catch (e) {
     console.log(e);

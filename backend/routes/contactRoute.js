@@ -6,6 +6,6 @@ const contactRouter = express.Router();
 
 contactRouter.post("/contact", sendEmail);
 contactRouter.get("/emails", getEmails);
-contactRouter.delete("/email/:id", removeEmail);
+contactRouter.delete("/emails/:id", removeEmail);
 
 export default contactRouter;
