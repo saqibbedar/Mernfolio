@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BaseURL } from "../../assets/assets";
 import "./ContactPageLayout.css";
 
 const ContactPageLayout = () => {
@@ -17,7 +18,7 @@ const ContactPageLayout = () => {
     e.preventDefault();
 
     try{
-      const res = await fetch(`${import.meta.BaseURL}/contact`, {
+      const res = await fetch(`${BaseURL}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

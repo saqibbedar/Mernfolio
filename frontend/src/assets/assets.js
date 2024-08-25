@@ -9,6 +9,8 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import CppIcon from "./CppIcon";
 
+export const BaseURL = "http://localhost:8000/api";
+
 export const icons = {
     search : CiSearch,
     hamburger : FiMenu,
