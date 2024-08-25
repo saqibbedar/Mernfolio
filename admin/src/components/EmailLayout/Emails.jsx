@@ -2,6 +2,7 @@ import './Emails.css'
 import Spiner from '../Spiner/Spiner';
 import { useContext } from 'react';
 import { EmailContext } from '../../Context/EmailContext';
+import { icons, formatDateTime } from '../../assets/assets';
 
 
 const Emails = () => {
@@ -22,8 +23,8 @@ const Emails = () => {
               <div className="client-message">{mail.message}</div>
             </div>
             <div className="email-utilities">
-              <div className="email-timestamp">{new Date(mail.createdAt).toLocaleString()}</div>
-              <div className="email-action" onClick={()=> removeEmail(mail._id)}>delete</div>
+              <div className="email-timestamp">{formatDateTime(new Date(mail.createdAt))}</div>
+              <div className="email-action" onClick={()=> removeEmail(mail._id)}><icons.remove/></div>
             </div>
           </div>
         )))

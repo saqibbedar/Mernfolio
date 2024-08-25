@@ -40,16 +40,22 @@
   font-weight: 300;
   color: #cacaca;
 }
+.email-action svg{
+  height: 20px;
+  width: 20px;
+}
 .email-timestamp {
   white-space: nowrap;
 }
 
-@media (width < 1067px) {
+@media (width < 967px) {
   .email-content {
     gap: 20px;
   }
-  .email-utilities {
-    flex-direction: column;
-    gap: 2px;
+  .email-content {
+    grid-template-columns: 100px 1fr;
+  }
+  .email-action {
+    display: none;
   }
 }

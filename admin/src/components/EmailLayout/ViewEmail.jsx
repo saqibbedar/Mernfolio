@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { EmailContext } from "../../Context/EmailContext";
 import {Link} from "react-router-dom"
 import './ViewEmail.css'
-import { icons } from "../../assets/assets";
+import { icons, formatDateTime } from "../../assets/assets";
 
 const ViewEmail = () => {
   const { selectedEmail, removeSelectedEmail, removeEmail } = useContext(EmailContext);
@@ -25,7 +25,7 @@ const ViewEmail = () => {
             <Link to={`mailto:${selectedEmail.email}`} className="client-email">{`<${selectedEmail.email}>`}</Link>
         </div>
         <div className="view-email-utility">
-            <div className="timestamps">{`${new Date(selectedEmail.createdAt).toLocaleString()}`}</div>
+            <div className="timestamps">{`${formatDateTime(new Date(selectedEmail.createdAt))}`}</div>
             <div className="show-option-btn" onClick={handleOptions}>{<icons.options/>}</div>
         </div>
       </div>
