@@ -16,7 +16,7 @@ const icons = {
   pdf: BsFileEarmarkPdfFill,
 };
 
-export function formatDateTime(date) {
+function formatDateTime(date) {
     
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -32,7 +32,7 @@ export function formatDateTime(date) {
   return `${month} ${day}, ${year}, ${hours}:${minutes} ${ampm}`;
 }
 
-export function formatDate(date) {
+function formatDate(date) {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
   
     const month = months[date.getMonth()];
@@ -42,7 +42,7 @@ export function formatDate(date) {
     return `${month} ${day}, ${year}`;
 }
 
-export function formatTime(time) {
+function formatTime(time) {
     let hours = time.getHours();
     const minutes = time.getMinutes().toString().padStart(2, "0");
     const ampm = hours >= 12 ? "PM" : "AM";

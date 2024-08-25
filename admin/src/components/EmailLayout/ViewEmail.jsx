@@ -5,7 +5,7 @@ import './ViewEmail.css'
 import { icons, formatDateTime } from "../../assets/assets";
 
 const ViewEmail = () => {
-  const { selectedEmail, removeSelectedEmail, removeEmail } = useContext(EmailContext);
+  const { selectedEmail, removeSelectedEmail, removeEmail, saveAsPDF } = useContext(EmailContext);
   const [showOptions, setShowOptions] = useState(false);
 
   const handleOptions = ()=>{
@@ -33,7 +33,7 @@ const ViewEmail = () => {
 
       <div className={`view-email-options ${showOptions ? "" : "hide"}`}>
         <span onClick={()=> handleEmailDelete(selectedEmail._id)}><icons.remove/>delete email</span>
-        <span ><icons.pdf/>save as pdf</span>
+        <span onClick={saveAsPDF}><icons.pdf/>save as pdf</span>
       </div>
 
       <div className="close-email" title="close" onClick={removeSelectedEmail}><icons.close/></div>
