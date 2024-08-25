@@ -1,0 +1,55 @@
+.loading-handler {
+  width: 100%;
+  height: calc(100vh - 72.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emails {
+  display: flex;
+  flex-direction: column;
+}
+.email-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  border-bottom: 1px solid #3e3e3e;
+  padding: 15.2px 25px;
+  padding-right: 40px;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.email-content {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+}
+.client-name {
+  white-space: nowrap;
+}
+.client-message {
+  font-weight: 300;
+}
+.email-utilities {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 300;
+  color: #cacaca;
+}
+.email-timestamp {
+  white-space: nowrap;
+}
+
+@media (width < 1067px) {
+  .email-content {
+    gap: 20px;
+  }
+  .email-utilities {
+    flex-direction: column;
+    gap: 2px;
+  }
+}

@@ -1,10 +1,15 @@
-import React from 'react'
+import { useState } from 'react'
+import { Navbar, ContentWrapper } from './components/components'
 
 const App = () => {
+
+  const [isSideBarHidden, setIsSideBarHidden] = useState(false);
+
   return (
-    <div>
-      
-    </div>
+    <>
+      <Navbar isSideBarHidden={isSideBarHidden}  setIsSideBarHidden={setIsSideBarHidden}/>
+      <ContentWrapper isSideBarHidden={isSideBarHidden}/>
+    </>
   )
 }
 

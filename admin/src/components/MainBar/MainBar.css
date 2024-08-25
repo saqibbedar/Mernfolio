@@ -1,0 +1,6 @@
+.main-bar {
+    width: 100%;
+    height: calc(100vh - 72.5px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}

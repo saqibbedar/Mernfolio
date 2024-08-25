@@ -1,0 +1,46 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 2px solid #3e3e3e;
+}
+
+.logo-area{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-area svg {
+    width: 40px;
+    height: 35px;
+    fill: white;
+    background-color: #3e3e3e;
+    padding-inline: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.logo-area h1 {
+    user-select: none;
+}
+
+.logo-area svg:active{
+    scale: .9;
+}
+
+.img-overlay{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+.img-overlay img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    user-select: none;
+}
