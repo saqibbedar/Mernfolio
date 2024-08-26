@@ -1,9 +1,8 @@
-import contactModel from "../models/contactModel.js";
+import { contactModel }from "../models/models.js";
 
 // Send Email
 
 const sendEmail = async (req, res) => {
-  console.log(req.body);
 
   const mail = new contactModel({
     name: req.body.name,
