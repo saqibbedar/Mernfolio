@@ -2,7 +2,7 @@ import { useState } from "react";
 import { createContext } from "react";
 import { BaseURL } from "../assets/assets";
 import { useEffect } from "react";
-import { formatDateTime } from "../assets/assets";
+import { formatDateTime } from "easy-datetime-fmt";
 
 export const EmailContext = createContext();
 

@@ -2,8 +2,8 @@ import './Emails.css'
 import Spiner from '../Spiner/Spiner';
 import { useContext } from 'react';
 import { EmailContext } from '../../Context/EmailContext';
-import { icons, formatDateTime } from '../../assets/assets';
-
+import { icons} from '../../assets/assets';
+import { formatDateTime } from 'easy-datetime-fmt';
 
 const Emails = () => {
 

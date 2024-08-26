@@ -2,7 +2,8 @@ import React, { useContext, useState } from "react";
 import { EmailContext } from "../../Context/EmailContext";
 import {Link} from "react-router-dom"
 import './ViewEmail.css'
-import { icons, formatDateTime } from "../../assets/assets";
+import { icons } from "../../assets/assets";
+import { formatDateTime } from "easy-datetime-fmt";
 
 const ViewEmail = () => {
   const { selectedEmail, removeSelectedEmail, removeEmail, saveAsPDF } = useContext(EmailContext);

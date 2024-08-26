@@ -16,39 +16,4 @@ const icons = {
   pdf: BsFileEarmarkPdfFill,
 };
 
-function formatDateTime(date) {
-    
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
-  const month = months[date.getMonth()];
-  const day = date.getDate();
-  const year = date.getFullYear();
-
-  let hours = date.getHours();
-  const minutes = date.getMinutes().toString().padStart(2, "0");
-  const ampm = hours >= 12 ? "PM" : "AM";
-  hours = hours % 12 || 12; // Convert 24-hour time to 12-hour time, and handle "0" as "12".
-
-  return `${month} ${day}, ${year}, ${hours}:${minutes} ${ampm}`;
-}
-
-function formatDate(date) {
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  
-    const month = months[date.getMonth()];
-    const day = date.getDate();
-    const year = date.getFullYear();
-  
-    return `${month} ${day}, ${year}`;
-}
-
-function formatTime(time) {
-    let hours = time.getHours();
-    const minutes = time.getMinutes().toString().padStart(2, "0");
-    const ampm = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12 || 12;
-  
-    return `${hours}:${minutes} ${ampm}`;
-}
-
-export { Logo, icons, BaseURL, formatDateTime, formatDate, formatTime };
+export { Logo, icons, BaseURL};
