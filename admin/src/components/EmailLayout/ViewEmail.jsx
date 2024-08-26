@@ -1,13 +1,24 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { EmailContext } from "../../Context/EmailContext";
-import {Link} from "react-router-dom"
+import {Link, useNavigate, useParams} from "react-router-dom"
 import './ViewEmail.css'
 import { icons } from "../../assets/assets";
 import { formatDateTime } from "easy-datetime-fmt";
 
-const ViewEmail = () => {
-  const { selectedEmail, removeSelectedEmail, removeEmail, saveAsPDF } = useContext(EmailContext);
+const ViewEmail = ({selectedEmail}) => {
+  const { id } = useParams();
+  const { removeSelectedEmail, removeEmail, saveAsPDF, viewEmail } = useContext(EmailContext);
   const [showOptions, setShowOptions] = useState(false);
+
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    viewEmail(id);
+  }, [id, viewEmail]);
+
+  if (!selectedEmail) {
+    return <div>Loading...</div>; // Handle loading state or email not found
+  }
 
   const handleOptions = ()=>{
     setShowOptions(!showOptions);
@@ -15,6 +26,12 @@ const ViewEmail = () => {
 
   const handleEmailDelete = (id) => {
     removeEmail(id);
+    removeSelectedEmail();
+    navigate("/emails");
+  }
+
+  const handleClose = () => {
+    window.history.back();
     removeSelectedEmail();
   }
 
@@ -37,7 +54,7 @@ const ViewEmail = () => {
         <span onClick={saveAsPDF}><icons.pdf/>save as pdf</span>
       </div>
 
-      <div className="close-email" title="close" onClick={removeSelectedEmail}><icons.close/></div>
+      <div className="close-email" title="close" onClick={handleClose}><icons.close/></div>
     </div>
   );
 };

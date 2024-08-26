@@ -166,6 +166,17 @@ const EmailProvider = ({children}) => {
         
     }
 
+    const totalEmails = () => {
+        return emails.length;
+    }
+
+
+    const latestEmail = () => {
+        if (emails.length > 0) {
+            setSelectedEmail(emails[0]);
+        }
+    }
+
     const emailsData = {
         emails,
         isLoading,
@@ -174,6 +185,8 @@ const EmailProvider = ({children}) => {
         selectedEmail,
         removeSelectedEmail,
         saveAsPDF,
+        totalEmails,
+        latestEmail
     }
 
   return (

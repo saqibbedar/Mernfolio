@@ -21,6 +21,9 @@
   font-weight: 400;
   cursor: pointer;
 }
+a{
+  color: rgb(255, 255, 255);
+}
 .email-content {
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -28,9 +31,12 @@
 }
 .client-name {
   white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: .8px;
 }
 .client-message {
   font-weight: 300;
+  color: #cacaca;
 }
 .email-utilities {
   display: flex;

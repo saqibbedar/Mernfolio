@@ -1,0 +1,38 @@
+.dashboard{
+    display: grid;
+    grid-template-columns: 300px 1fr 1fr;
+    padding: 20px 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.dashboard-box-1{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color:#e7e7e7;
+    color: black;
+    padding: 20px;
+    border-radius: 8px;
+}
+.latest-email div, .totalEmails {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.redirect{
+    margin-top: 10px;
+    font-size: 1rem;
+}
+.redirect a{
+    color: inherit;
+    display: flex;
+    width: 100%;
+}
+.redirect button{
+    all: unset;
+    width: 100%;
+    background: #cacaca;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+}

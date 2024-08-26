@@ -1,18 +1,26 @@
-import { useContext } from "react";
 import Emails from "../EmailLayout/Emails";
+import ViewEmail from "../EmailLayout/ViewEmail"
 import "./MainBar.css";
-import { EmailContext } from "../../Context/EmailContext";
-import ViewEmail from "../EmailLayout/ViewEmail";
+import NotFound from "../NotFound/NotFound"
+import { Route, Routes } from "react-router-dom";
+import { Dashboard, Home } from "../pages/pages.js";
+import { useContext } from "react";
+import { EmailContext } from "../../Context/EmailContext.jsx";
 
 const MainBar = () => {
 
-  const { selectedEmail } = useContext(EmailContext);
+  const {selectedEmail}= useContext(EmailContext);
 
   return (
     <div className="main-bar">
-      {
-        selectedEmail ? <ViewEmail/> : <Emails/>
-      }
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/emails" element={<Emails/>}/>
+        <Route path="/emails/:id" element={<ViewEmail selectedEmail={selectedEmail}/>}/>
+        <Route path="/home" element={<Home/>}/>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { icons, Logo } from "../../assets/assets";
 import './Navbar.css';
 
@@ -8,7 +9,7 @@ const Navbar = ({ isSideBarHidden , setIsSideBarHidden}) => {
       <div className="navbar">
         <div className="logo-area">
           { <icons.hamburger onClick={()=> setIsSideBarHidden(!isSideBarHidden)}/>}
-          <h1>{Logo}</h1>
+          <Link to={'/'}>{Logo}</Link>
         </div>
         <div className="img-overlay">
           <img

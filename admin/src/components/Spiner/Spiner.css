@@ -4,10 +4,15 @@
     position: relative; 
     width: 20px;
     height: 20px;
-    border-top: 5px solid white;
-    border-left: 5px solid #3e3e3e;
-    border-bottom: 5px solid #3e3e3e;
-    border-right: 5px solid white;
+    border-width: 5px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-color: white;
+    border-left-color: #3e3e3e;
+    border-bottom-color: #3e3e3e;
+    border-right-color: white; 
     transition: all .3s ease-in-out;
 }
 

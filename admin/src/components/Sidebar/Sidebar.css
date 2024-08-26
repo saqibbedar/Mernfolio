@@ -1,54 +1,58 @@
-.sidebar{
-    width: 260px;
-    border-right: 2px solid #3e3e3e;
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 72.5px);
-    overflow-y: auto;
-    overflow-x: hidden;
+.sidebar {
+  width: fit-content;
+  border-right: 2px solid #3e3e3e;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 72.5px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: width 0.3s ease;
 }
-.sidebar button{
-    all: unset;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 10px;
-    width: 100%;
-    padding-left: 25px;
-    transition: all .2s ease;
+.sidebar:hover {
+  width: 200px;
 }
-.sidebar button:hover{
-    background-color: #3e3e3e;
+.sidebar a {
+  color: white;
+}
+.sidebar button {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 13px 10px;
+  width: 100%;
+  padding-left: 25px;
+  transition: all 0.2s ease;
+}
+.sidebar button:hover {
+  background-color: #3e3e3e;
 }
 
-.sidebar button svg{
-    width: 30px;
-    height: 30px;
+.sidebar button svg {
+  width: 20px;
+  height: 20px;
 }
 
 .sidebar button span {
-    font-size: 1rem;
+  font-size: 1.1rem;
+  visibility: hidden;
+  width: 0px;
+  opacity: 0;
+  transition: 0.1s ease;
+}
+.sidebar:hover button span {
+  visibility: visible;
+  opacity: 1;
+  width: fit-content;
 }
 
-button.active{
-    background-color: #3e3e3e;
+button.active {
+  background-color: #3e3e3e;
 }
 
-.sidebar::-webkit-scrollbar {
-    width: 5px;
+@media (width < 767px) {
+  .sidebar button {
+    padding-left: 15px;
+  }
 }
-/* Track */
-.sidebar::-webkit-scrollbar-track {
-    background: #f1f1f150; 
-  }
-   
-  /* Handle */
-  .sidebar::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  .sidebar::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
