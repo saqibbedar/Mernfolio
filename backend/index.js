@@ -2,7 +2,11 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { ConnectToDatabase } from "./config/db.js";
-import { contactRouter, slideContentRouter } from "./routes/routes.js";
+import { 
+    contactRouter, 
+    slideContentRouter,
+    certificatesRouter 
+} from "./routes/routes.js";
 
 // app config
 const app = express();
@@ -23,6 +27,7 @@ ConnectToDatabase(`${process.env.MONGODB_URL}/Mernfolio`);
 // api endpoints
 app.use("/api", contactRouter);
 app.use("/api", slideContentRouter);
+app.use("/api", certificatesRouter);
 
 app.get("/", (req, res)=>{
     res.send("Server is working...");
