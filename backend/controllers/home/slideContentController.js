@@ -1,4 +1,4 @@
-import { slideContentModel } from "../models/models.js";
+import { slideContentModel } from "../../models/models.js";
 
 // add slide content
 

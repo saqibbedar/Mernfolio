@@ -1,4 +1,4 @@
-import { contactModel }from "../models/models.js";
+import { contactModel }from "../../models/models.js";
 
 // Send Email
 
