@@ -1,4 +1,3 @@
-import "./FeaturedProjects.css";
 import React, { useContext, useState } from "react";
 import { GridContext } from "../../../Context/GridContext";
 import HeroBtn from "../../Reusable Components/HeroBtn/HeroBtn";
@@ -16,7 +15,7 @@ const FeaturedProjects = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className="f-projects-wrapper">
+    <div className="flex flex-col mt-[26rem] mb-7 media1:mb-2">
 
       <GridToggler section_name={"Featured projects"} isLoading={isLoading}/>
       <Grid isGrid={isGrid} gridTempCol={"1fr 1fr"}>
@@ -27,7 +26,7 @@ const FeaturedProjects = () => {
         }
       </Grid>
 
-      <div className="hero-btn-wrapper">
+      <div className="hero-btn-wrapper w-full flex justify-center mt-[2rem] media1:mt-[2.5rem]">
         <HeroBtn
           btnValue={"View all projects"}
           btnLink={'/Projects'}
